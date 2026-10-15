@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cosmic Jodi - Intergalactic Matrimony</title>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="planet" aria-hidden="true"></div>
+<div class="wrap">
+<header>
+  <div class="logo">Orbiting<span>You</span></div>
+  <nav id="nav"></nav>
+</header>
+
+<section id="vReg">
+  <div class="hero"><h1>Find your destined partner across the galaxy</h1><p>No internet on this planet? No problem. Register with your name and a Cosmic ID, then tell us who you are and who you are looking for.</p></div>
+  <div class="panel" style="max-width:460px"><h2 id="rTitle">Register</h2><div class="form">
+    <div><label for="rName">Your name</label><input id="rName" autocomplete="off"></div>
+    <div><label for="rId">Cosmic ID</label><input id="rId" autocomplete="off" placeholder="e.g. ARJUN-001" maxlength="20"></div>
+    <button class="link" id="rGen" type="button">Generate a Cosmic ID for me</button>
+    <p class="hint">Demo: login with Arjun's Cosmic ID ARJUN-001</p>
+    <p class="err" id="rErr"></p>
+    <button class="primary" id="rGo">Register</button><button class="link" id="rSwap"></button>
+  </div></div>
+</section>
+
+<section id="vBio" hidden>
+  <div class="hero"><h1>Your bio data</h1><p>Tell us about yourself and your preferred partner. Matches are filtered by your preferences.</p></div>
+  <div class="cols">
+    <div class="panel"><h2>About me</h2><div class="form">
+      <div class="two"><div><label for="bGender">I am</label><select id="bGender"><option value="m">Male</option><option value="f">Female</option></select></div><div><label for="bAge">Age (cycles)</label><input id="bAge" type="number" min="18" max="999"></div></div>
+      <div class="two"><div><label for="bSpecies">Species</label><input id="bSpecies" placeholder="e.g. Glorbian"></div><div><label for="bPlanet">Home planet</label><input id="bPlanet" placeholder="e.g. Zeta-4"></div></div>
+      <div class="two"><div><label for="bHands">Hands</label><select id="bHands"></select></div><div><label for="bEyes">Eyes</label><select id="bEyes"></select></div></div>
+      <div class="two"><div><label for="bLegs">Legs</label><select id="bLegs"></select></div><div><label for="bAnt">Antennae</label><select id="bAnt"></select></div></div>
+      <div><label for="bSkin">Skin colour</label><select id="bSkin"></select></div>
+      <div><label for="bLang">My language</label><select id="bLang"></select></div>
+      <div><label for="bAbout">About me</label><textarea id="bAbout" rows="3" placeholder="Likes long walks on asteroid belts"></textarea></div>
+    </div></div>
+    <div class="panel"><h2>My preferred partner</h2><div class="form">
+      <div><label for="pGender">Looking for</label><select id="pGender"><option value="">Any</option><option value="m">Male</option><option value="f">Female</option></select></div>
+      <div class="two"><div><label for="pHands">Hands</label><select id="pHands"></select></div><div><label for="pEyes">Eyes</label><select id="pEyes"></select></div></div>
+      <div class="two"><div><label for="pLegs">Legs</label><select id="pLegs"></select></div><div><label for="pAnt">Antennae</label><select id="pAnt"></select></div></div>
+      <div><label for="pSkin">Skin colour</label><select id="pSkin"></select></div>
+      <p class="hint">Leave a field on Any if you are open-minded.</p>
+    </div></div>
+  </div>
+  <p class="err" id="bErr"></p><button class="primary" id="bSave">Save and find my matches</button>
+</section>
+
+<section id="vMain" hidden>
+  <div class="hero"><h1 id="mTitle">Your matches</h1><p>Filtered by your preferred partner. Change anything below, or just say it.</p></div>
+  <section class="panel" aria-labelledby="ft">
+    <h2 id="ft">Partner preferences</h2>
+    <div class="voicebar">
+      <button class="mic" id="mic" aria-label="Speak your preferences" title="Speak your preferences">🎙️</button>
+      <input id="say" type="text" placeholder="Say or type: handsome, 2 hands, 4 eyes, green" aria-label="Describe your ideal partner">
+      <button class="primary" id="go">Search</button>
+    </div>
+    <p class="status" id="status" aria-live="polite">Tap the microphone and say what you want in a partner.</p>
+    <div class="filters">
+      <div><label for="fg">Looking for</label><select id="fg"><option value="">Any</option><option value="m">Male</option><option value="f">Female</option></select></div>
+      <div><label for="fh">Hands</label><select id="fh"></select></div>
+      <div><label for="fe">Eyes</label><select id="fe"></select></div>
+      <div><label for="fl">Legs</label><select id="fl"></select></div>
+      <div><label for="fa">Antennae</label><select id="fa"></select></div>
+      <div><label for="fs">Skin colour</label><select id="fs"></select></div>
+    </div>
+    <div class="row"><button id="clear">Clear</button><button id="hello">🔊 Hear this page</button><label class="check"><input type="checkbox" id="strict">Perfect matches only</label></div>
+  </section>
+  <div class="sechead"><h2>Singles for you</h2><span id="count"></span></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<footer>Powered by one laptop battery and a lot of hope. 💫</footer>
+</div>
+
+<aside id="chat" class="chat" hidden aria-label="Chat">
+  <div class="chead"><div><strong id="cName"></strong><div class="meta" id="cLang"></div></div><button id="cClose" aria-label="Close chat">✕</button></div>
+  <div class="idea" id="cIdea"></div>
+  <div class="msgs" id="cMsgs" aria-live="polite"></div>
+  <div class="cin"><button class="mic small" id="cMic" aria-label="Speak a message">🎙️</button><input id="cText" placeholder="Type or speak..." autocomplete="off"><button class="primary" id="cSend">Send</button></div>
+  <label class="check"><input type="checkbox" id="cAuto" checked>Read replies aloud</label>
+</aside>
+<div id="toast" role="status"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/api.js"></script>
+<script src="js/portraits.js"></script>
+<script src="js/app.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>

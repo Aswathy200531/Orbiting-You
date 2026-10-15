@@ -1,0 +1,13 @@
+{
+  "name": "cosmic-jodi",
+  "version": "1.0.0",
+  "description": "Intergalactic matrimony site with translated chat",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.22.3",
+    "socket.io": "^4.7.5"
+  }
+}
